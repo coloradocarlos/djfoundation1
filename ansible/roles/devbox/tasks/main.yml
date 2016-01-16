@@ -1,0 +1,8 @@
+---
+  - name: Update apt
+    apt: update_cache=yes
+
+  - name: Update dot profile
+    lineinfile: dest=/home/vagrant/.profile insertafter=EOF state=present line="cd /vagrant"
+
+  - include: foundation.yml

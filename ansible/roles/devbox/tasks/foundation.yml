@@ -1,0 +1,28 @@
+---
+  - name: Install Zurb Foundation
+    apt: name={{item}} state=installed
+    with_items:
+      - git
+
+  # Note: stock nodejs from trusty32 sources is out of date and will not work with Foundation.
+  # Build from source instead.
+  # https://github.com/nodesource/distributions
+  # https://github.com/AdesisNetlife/ansible-jenkins/blob/master/tasks/nodejs.yml
+
+  - stat: path=/etc/apt/sources.list.d/nodesource.list
+    register: nodesource
+
+  - name: Add NodeJS repository
+    command: bash -c "curl -sL https://deb.nodesource.com/setup_0.12 | sudo -E bash -"
+    when: not nodesource.stat.exists
+    tags: nodejs
+
+  - name: Install NodeJS package
+    apt: name=nodejs state=latest
+    tags: nodejs
+
+  - name: Install Zurb Foundation CLI
+    npm: name={{item}} global=yes
+    with_items:
+      - foundation-cli@2.0.2
+      - http-server@0.8.5

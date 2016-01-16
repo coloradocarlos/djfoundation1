@@ -1,0 +1,9 @@
+---
+  - name: Update apt
+    apt: update_cache=yes
+
+  - name: Install Django
+    apt: name={{item}} state=installed
+    with_items:
+      - python-pip
+      - python-dev
