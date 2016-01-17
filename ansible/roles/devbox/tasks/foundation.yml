@@ -1,4 +1,6 @@
 ---
+  # Installation instructions: https://github.com/zurb/foundation-cli
+  # NodeJS needs to be at 0.12+, trusty32 is not at the required level
   - name: Install Zurb Foundation
     apt: name={{item}} state=installed
     with_items:
