@@ -10,5 +10,3 @@
       - postgresql-client-9.3
       - libpq-dev
 
-  - name: Setup Python virtualenv
-    command: mkvirtualenv -a /vagrant -r /vagrant/requirements.txt --python=`which python3` djfoundation1
