@@ -6,3 +6,4 @@
     lineinfile: dest=/home/vagrant/.profile insertafter=EOF state=present line="cd /vagrant"
 
   - include: foundation.yml
+  - include: django.yml
