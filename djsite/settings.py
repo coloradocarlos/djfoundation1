@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'app1'
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -75,9 +76,16 @@ WSGI_APPLICATION = 'djsite.wsgi.application'
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
 DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    # }
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'djfoundation1',
+        'USER': 'vagrant',
+        'HOST': '',
+        'PORT': ''
     }
 }
 
@@ -119,3 +127,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATIC_ROOT = '/tmp/test6'
+
+STATICFILES_DIRS = [
+   ('bower_components', '/vagrant/foundation/bower_components'),
+   ('foundation', '/vagrant/foundation'),
+]

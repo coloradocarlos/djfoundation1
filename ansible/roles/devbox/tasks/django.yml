@@ -8,5 +8,17 @@
       - virtualenvwrapper
       - postgresql-9.3
       - postgresql-client-9.3
+      # libpq-dev needed to compile python-psycopg2 PIP module
       - libpq-dev
+      # python-psycopg2 needed for Ansible module, not Django
+      - python-psycopg2
 
+  - name: Add vagrant user to PostgreSQL
+    sudo: yes
+    sudo_user: postgres
+    postgresql_user: name=vagrant role_attr_flags=LOGIN
+
+  - name: Create Django database
+    sudo: yes
+    sudo_user: postgres
+    postgresql_db: name=djfoundation1 owner=vagrant

@@ -40,7 +40,7 @@ Uses a Vagrant virtual machine for software development.
     vagrant@xyz $ bower install
     vagrant@xyz $ foundation build
 
- # Run Foundation SASS auto-rebuild
+ # Run Foundation Sass auto-rebuild
 
 Runs a minimal web server on port 8080, with additional service on port 35729 for LiveReload browser plugin:
 
