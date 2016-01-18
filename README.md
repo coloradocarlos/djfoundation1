@@ -1,16 +1,20 @@
 # djfoundation1
 
-An experiment in integrating Zurb Foundation and Django together.
+An experiment in integrating Zurb Foundation and Django.
 
-Uses a Vagrant virtual machine for software development.
+Uses a Vagrant virtual machine for software development for Foundation Sass (front-end) and Django (back-end).
 
 # Install VirtualBox, Vagrant, and Ansible on host box
 
+We are using Ansible 2.0 and playbooks may not work with earlier versions.
+
 ## Ubuntu 14.04 LTS
+
+Note: ansible 1.8 in apt has a bug and does not handle npm dependencies correctly. Use the latest 2.0.0 in pip (ansible requires pip2 / python2).
 
     $ sudo apt-get install vagrant
     $ sudo apt-get install virtualbox
-    $ sudo apt-get install ansible
+    $ sudo pip2 install ansible==2.0.0.2
 
 ## Mac OS X Yosimite
 
@@ -22,7 +26,9 @@ Uses a Vagrant virtual machine for software development.
 
 4) Install Ansible
 
-    $ sudo pip install ansible
+Note: Ansible needs Python2.7.
+
+    $ sudo pip install ansible==2.0.0.2
 
 # Start Vagrant
 
@@ -44,5 +50,5 @@ Uses a Vagrant virtual machine for software development.
 
 Runs a minimal web server on port 8080, with additional service on port 35729 for LiveReload browser plugin:
 
-    vagrant@xyz $ cd /vagrant/djfoundation1/foundation
+    vagrant@xyz $ cd /vagrant/foundation
     vagrant@xyz $ foundation watch

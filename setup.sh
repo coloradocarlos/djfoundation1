@@ -5,15 +5,16 @@ npm install
 bower install
 foundation build
 popd
-# Then use 'workon djfoundation1' to get to this environments
+# Then use 'workon djsite' to get to this environments
 source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
-mkvirtualenv -a /vagrant -r requirements.txt --python=`which python3` djfoundation1
+mkvirtualenv -a /vagrant -r requirements.txt --python=`which python3` djsite
 # Run database initialization
 python --version
 ./manage.py migrate
 # Create superuser if none exist
-superusers=`echo "select count(*)>0 from auth_user;" | psql -P "tuples_only=on" djfoundation1`
+superusers=`echo "select count(*)>0 from auth_user;" | psql -P "tuples_only=on" djsite`
 if [ "$superusers" = " f" ]; then
+	echo "Creating Django superuser..."
 	./manage.py createsuperuser
 fi
-echo -e "\nTo run manage.py enter 'workon djfoundation1'\n"
+echo -e "\nTo run manage.py enter 'workon djsite'\n"

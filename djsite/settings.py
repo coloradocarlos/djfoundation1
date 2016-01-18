@@ -83,7 +83,7 @@ DATABASES = {
     # }
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'djfoundation1',
+        'NAME': 'djsite',
         'USER': 'vagrant',
         'HOST': '',
         'PORT': ''

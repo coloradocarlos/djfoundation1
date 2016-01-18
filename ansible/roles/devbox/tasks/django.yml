@@ -14,11 +14,11 @@
       - python-psycopg2
 
   - name: Add vagrant user to PostgreSQL
-    sudo: yes
-    sudo_user: postgres
+    become: yes
+    become_user: postgres
     postgresql_user: name=vagrant role_attr_flags=LOGIN
 
   - name: Create Django database
-    sudo: yes
-    sudo_user: postgres
-    postgresql_db: name=djfoundation1 owner=vagrant
+    become: yes
+    become_user: postgres
+    postgresql_db: name=djsite owner=vagrant
