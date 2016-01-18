@@ -25,7 +25,8 @@
             <td>{{ nutritionfact.servings_per_container }}</td>
             <td>{{ nutritionfact.serving_size_g }} g</td>
             <td>{{ nutritionfact.calories_kcal }} Cal</td>
-            <td><i class="fi-pencil"> edit</i></td>
+            <!-- td><a href="update/{{ nutritionfact.id }}"><i class="fi-pencil"> edit</i></a></td -->
+            <td><a onclick="myclick({{ nutritionfact.id }})"><i class="fi-pencil"> edit</i></a></td>
           </tr>
           {% empty %}
           <tr>
@@ -36,4 +37,23 @@
       </table>
     </div>
   </div>
+
+  <div class="row">
+
+<div class="large reveal" id="updateModal" data-reveal></div>
+
+<script>
+  function myclick(id) {
+    var $modal = $('#updateModal');
+    //alert($modal.html());
+
+
+    $.ajax({url: 'update/' + id}).done(function(resp){
+          //alert(resp);
+
+        $modal.html(resp).foundation('open');
+    });
+  }
+  </script>
+
 {% endblock %}

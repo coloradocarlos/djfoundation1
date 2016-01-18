@@ -12,3 +12,6 @@ class NutritionFact(models.Model):
     total_fat_g = models.IntegerField()
     sodium_mg = models.IntegerField()
     total_carbs_g = models.IntegerField()
+
+    class Meta:
+        ordering = ["product_name"]

@@ -1,0 +1,25 @@
+
+<div class="row">
+    <div class="large-12 columns">
+      <h2>Nutrition Facts Update</h2>
+    </div>
+  </div>
+<div class="row">
+    <div class="large-12 columns">
+
+		<div class="large-3 columns">&nbsp;</div>
+		<div class="large-6 columns">
+		  <form action="update/{{ form.instance.id }}/" method="post">
+		    {% csrf_token %}
+		    {{ form.as_table }}
+		    <input type="submit" value="Update" />
+		  </form>
+		</div>
+		<div class="large-3 columns">&nbsp;</div>
+
+	</div>
+</div>
+
+<button class="close-button" data-close aria-label="Close reveal" type="button">
+    <span aria-hidden="true">&times;</span>
+  </button>
