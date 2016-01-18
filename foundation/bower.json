@@ -10,7 +10,8 @@
   "homepage": "http://foundation.zurb.com",
   "dependencies": {
     "foundation-sites": "~6.1.0",
-    "motion-ui": "~1.1.0"
+    "motion-ui": "~1.1.0",
+    "foundation-icon-fonts-3": "git://github.com/mandross/foundation-icon-fonts-3.git#7ec5b7e1e99fe398e4395dd3d7ef9d47ac5895f5"
   },
   "ignore": [
     "**/.*",

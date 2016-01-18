@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+  <div class="row">
+    <div class="large-12 columns">
+      <h1>Nutrition Facts</h1>
+    </div>
+  </div>
+    
+  <div class="row">
+    <div class="large-12 columns">
+      <table>
+        <thead>
+          <tr>
+            <th width="200">Product Name</th>
+            <th>Servings per Container</th>
+            <th width="150">Serving Size</th>
+            <th width="150">Calories</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for nutritionfact in object_list %}
+          <tr>
+            <td>{{ nutritionfact.product_name }}</td>
+            <td>{{ nutritionfact.servings_per_container }}</td>
+            <td>{{ nutritionfact.serving_size_g }} g</td>
+            <td>{{ nutritionfact.calories_kcal }} Cal</td>
+            <td><i class="fi-pencil"> edit</i></td>
+          </tr>
+          {% empty %}
+          <tr>
+            <td colspan=4>No nutrtion facts available</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+{% endblock %}

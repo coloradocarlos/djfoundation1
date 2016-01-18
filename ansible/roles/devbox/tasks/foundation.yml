@@ -26,6 +26,6 @@
   - name: Install NPM components
     npm: name={{item}} global=yes
     with_items:
-      - bower@1.7.2
       - foundation-cli@2.0.2
+      - bower@1.7.2
       - http-server@0.8.5
