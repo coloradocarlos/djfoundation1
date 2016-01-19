@@ -11,6 +11,7 @@ mkvirtualenv -a /vagrant -r requirements.txt --python=`which python3` djsite
 # Run database initialization
 python --version
 ./manage.py migrate
+./manage.py loaddata foods.json
 # Create superuser if none exist
 superusers=`echo "select count(*)>0 from auth_user;" | psql -P "tuples_only=on" djsite`
 if [ "$superusers" = " f" ]; then

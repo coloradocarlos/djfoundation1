@@ -1,0 +1,40 @@
+[{
+    "model": "app2.nutritionfact",
+    "pk": 1,
+    "fields": {
+        "product_name": "Macaroni and Cheese",
+        "servings_per_container": 2,
+        "serving_size_g": 228,
+        "calories_kcal": 330,
+        "calories_from_fat_kcal": 110,
+        "total_fat_g": 12,
+        "sodium_mg": 130,
+        "total_carbs_g": 27
+    }
+}, {
+    "model": "app2.nutritionfact",
+    "pk": 2,
+    "fields": {
+        "product_name": "Homestyle Chili",
+        "servings_per_container": 2,
+        "serving_size_g": 244,
+        "calories_kcal": 250,
+        "calories_from_fat_kcal": 160,
+        "total_fat_g": 17,
+        "sodium_mg": 470,
+        "total_carbs_g": 31
+    }
+}, {
+    "model": "app2.nutritionfact",
+    "pk": 3,
+    "fields": {
+        "product_name": "Hope Hummus",
+        "servings_per_container": 8,
+        "serving_size_g": 28,
+        "calories_kcal": 50,
+        "calories_from_fat_kcal": 35,
+        "total_fat_g": 4,
+        "sodium_mg": 880,
+        "total_carbs_g": 3
+    }
+}]
