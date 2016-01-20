@@ -5,5 +5,11 @@
   - name: Update dot profile
     lineinfile: dest=/home/vagrant/.profile insertafter=EOF state=present line="cd /vagrant"
 
+  - name: Bash prompt fix 1 (turn on color)
+    replace: dest=/home/vagrant/.bashrc regexp='^#force_color_prompt=yes' replace='force_color_prompt=yes'
+
+  - name: Bash prompt fix 2 (user is red)
+    replace: dest=/home/vagrant/.bashrc regexp='01;32m' replace='01;31m'
+
   - include: foundation.yml
   - include: django.yml

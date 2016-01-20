@@ -37,4 +37,30 @@
         "sodium_mg": 880,
         "total_carbs_g": 3
     }
+}, {
+    "model": "app2.nutritionfact",
+    "pk": 4,
+    "fields": {
+        "product_name": "Frosted Flakes",
+        "servings_per_container": 1,
+        "serving_size_g": 69,
+        "calories_kcal": 290,
+        "calories_from_fat_kcal": 110,
+        "total_fat_g": 13,
+        "sodium_mg": 260,
+        "total_carbs_g": 42
+    }
+}, {
+    "model": "app2.nutritionfact",
+    "pk": 5,
+    "fields": {
+        "product_name": "Trader Joes Salad",
+        "servings_per_container": 1,
+        "serving_size_g": 340,
+        "calories_kcal": 250,
+        "calories_from_fat_kcal": 50,
+        "total_fat_g": 6,
+        "sodium_mg": 980,
+        "total_carbs_g": 32
+    }
 }]
