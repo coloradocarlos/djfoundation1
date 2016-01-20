@@ -1,11 +1,13 @@
 #!/bin/bash
 # Run once after vagrant provisioning
+# TODO: move this to the Ansible provisioner
 pushd foundation
 npm install
 bower install
 foundation build
 popd
 # Then use 'workon djsite' to get to this environments
+# TODO: move this to the Ansible provisioner
 source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
 mkvirtualenv -a /vagrant -r requirements.txt --python=`which python3` djsite
 # Run database initialization
